@@ -1,0 +1,40 @@
+departments
+-
+dept_no pk
+dept_name VARCHAR(255)
+
+dept_emp
+rel departments
+-
+emp_no INT
+dept_no VARCHAR(255)
+
+dept_manager
+rel employees
+rel departments 
+-
+dept_no INT
+emp_no VARCHAR(255)
+
+employees
+rel dept_emp
+-
+emp_no INT pk
+emp_title_id fk >- titles.title_id VARCHAR(255)
+birth_date DATE
+first_name VARCHAR(255)
+last_name VARCHAR(255)
+sex VARCHAR(255)
+hire_date DATE
+
+salaries
+rel employees
+-
+emp_no INT
+salary FLOAT
+
+titles
+rel employees
+-
+title_id pk VARCHAR(255)
+title VARCHAR(255)
