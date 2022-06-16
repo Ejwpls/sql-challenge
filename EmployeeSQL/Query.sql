@@ -1,26 +1,3 @@
-copy employees from 'C:\Users\edber\Google Drive\UWA DATA BOOTCAMP\sql-challenge\EmployeeSQL\data\employees.csv' delimiter ';' HEADER csv
-
-CREATE TABLE "employees" (
-    "emp_no" INT   NOT NULL,
-    "emp_title_id" VARCHAR(255)   NOT NULL,
-    "birth_date"  VARCHAR(255)   NOT NULL,
-    "first_name" VARCHAR(255)   NOT NULL,
-    "last_name" VARCHAR(255)   NOT NULL,
-    "sex" VARCHAR(255)   NOT NULL,
-    "hire_date"  DATE NOT NULL,
-    CONSTRAINT "pk_employees" PRIMARY KEY (
-        "emp_no"
-     )
-);
-
-CREATE TABLE "dept_manager" (
-    "dept_no" VARCHAR(255)   NOT NULL,
-    "emp_no" INT  NOT NULL
-);
-
-ALTER TABLE "employees" ADD CONSTRAINT "fk_employees_emp_title_id" FOREIGN KEY("emp_title_id")
-REFERENCES "titles" ("title_id");
-
 
 -- 1. List the following details of each employee: employee number, last name, first name, sex, and salary.
 Select employees.emp_no, employees.last_name, employees.first_name, salaries.salary
